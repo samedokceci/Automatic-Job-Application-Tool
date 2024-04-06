@@ -32,8 +32,8 @@ def add_attachment(msg, filename, filepath = ""):
             f.read(),
             name=filename
         )
-        file['Content-Disposition'] = f'filename="{filename}"'
-        msg.attach(file)
+    file['Content-Disposition'] = f'attachment; filename="{filename}"'
+    msg.attach(file)
 
 def send_messages(csv_filename):
     csv_file = open(csv_filename)
@@ -88,6 +88,7 @@ if __name__ == "__main__":
     RESUME_PATH = "resume-latest.pdf"
     TRANSKRIPT_PATH = "transkript.pdf"
     
+    # coverletter can be edited except recruiter_field and company field
     # recruiter_field and company_field will be replaced by data in data.csv
     COVERLETTER_TEXT = """
 Dear {recruiter_field},
