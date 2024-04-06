@@ -13,3 +13,9 @@
 
 4. Run the following command: 
 `python3 apply-jobs.py`
+
+## For Gmail Users
+
+1. Make sure you have activated 2FA for your account.
+2. Generate an app password.
+3. Delete spaces in the 16-character-long password and use this password in the `.env` file.
